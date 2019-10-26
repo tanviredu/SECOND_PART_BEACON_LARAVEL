@@ -40,17 +40,53 @@ Route::get('/student/edit',function(){
 //     return $id;
 // })->where("id","[0-9]+");
 
-Route::get('/student/edit/do/{username?}',function($username=null){
-         return $username;
-     });
+//Route::get('/student/edit/do/{username?}',function($username=null){
+//         return $username;
+//     });
 
 
     
 // post request
 
-Route::post('/student/edit/do{username?}',function($username=null){
-    return $username;
-});
+//Route::post('/student/edit/do/{username?}',function($username=null){
+//    return $username;
+//});
 
 // if there is same url this will be overwrite
 // and last one is executed
+
+
+// if we want to do any post or get both then this
+// command will work
+
+//Route::match(['get','post'],'/student/edit/do/{username?}',function($username=null){
+//        return $username;
+//    });
+
+// if wou want any thinng which will be accepted then this will apply
+
+//Route::any('/student/edit/do/{username?}',function($username=null){
+//            return $username;
+//        });
+
+//Route::get('/student/{name?}/{id?}',function($id=null,$name=null){
+//    return [$id,$name];
+
+//});
+
+// to set the root by default with a prefix
+
+
+
+// you have to write under a prefix to set the root directory
+
+Route::prefix('/employees')->group(function(){
+    Route::get('/edit/{id?}',function($id){
+        return $id;
+    });
+
+});
+    
+
+
+    //namespace view hw
