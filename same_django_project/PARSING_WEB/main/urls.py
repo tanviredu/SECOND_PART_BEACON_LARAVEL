@@ -6,6 +6,6 @@ from django.urls import path
 urlpatterns = [
     path('',views.home,name='home'),
     ## this path is form taking the post value
-    path('process/',views.process,name='process')
+    path('main/process/',views.process,name='process')
 
 ]
