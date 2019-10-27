@@ -24,7 +24,12 @@ def Bagdoom(keyword):
         a=item.find('h2', attrs={'class':'product-name'}).text.strip()
         b=item.find('div', attrs={'class':'price-box'}).text[:20].strip()
         d.update({a:b})
-    return d
+    return d,url
+
+
+
+
+
 
 
 def daraz(keyword):
@@ -46,7 +51,7 @@ def daraz(keyword):
         a=str(item['name'][:10])
         b=str((item['price'][:6])+" BDT")
         e.update({a:b})
-    return e
+    return e,url
 # processing a preety url
 
 def process(request):
@@ -54,9 +59,10 @@ def process(request):
         ## take the value
         keyword = str(request.POST['keyword'])
         ##return HttpResponse(keyword)
-        text1 = Bagdoom(keyword)
-        text2 = daraz(keyword)
-        context = {'text1':text1,'text2':text2}
+        text1,url1 = Bagdoom(keyword)
+        text2,url2 = daraz(keyword)
+        
+        context = {'text1':text1,'text2':text2,'url1':url1,'url2':url2}
         return render(request,'public/result.html',context)
         #text=daraz(keyword)
         #return HttpResponse(text)
