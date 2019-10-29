@@ -97,6 +97,13 @@ Route::get('/student/edit',function(){
 ## route goes
 
 Route::get('/student','StudentController@index');
+## print everything
+Route::get('/test','testController@index');
+## now taking the same post form with
+# a different function
+Route::post('/test','testController@posttest');
+
+
 
 
 

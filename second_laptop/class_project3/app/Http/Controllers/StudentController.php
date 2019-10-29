@@ -12,6 +12,9 @@ class StudentController extends Controller
         #return "abs"; ## this will return the string
         ## we will return a view
         ## it will be under view folder
-        return view('math');
+        $num1 = 2;
+        $num2 = 2;
+        $sum = $num1+$num2;
+        return view('math',['sum' => $sum ]);
     }
 }
