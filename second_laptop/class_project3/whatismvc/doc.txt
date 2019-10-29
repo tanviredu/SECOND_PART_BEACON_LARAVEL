@@ -1,0 +1,15 @@
+logic goes to controler
+database goes to model
+html css js go to view
+three different things works togather which is called MVC
+
+controller is a little bit different it also  has
+-> businiss logic
+-> it connects the models and view
+
+model has database
+->CRUD operation in the model the database
+
+
+This is a perfect implementation of a oop operation
+
