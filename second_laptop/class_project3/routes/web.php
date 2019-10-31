@@ -103,6 +103,12 @@ Route::get('/test','testController@index');
 # a different function
 Route::post('/test','testController@posttest');
 
+// regiter method starts here
+########################################3
+
+Route::get('/registration','RegistrationController@index');
+Route::post('/registration','RegistrationController@save');
+
 
 
 
