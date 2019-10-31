@@ -21,6 +21,6 @@ class RegistrationController extends Controller
     // in this functuction
     public function save(){
         //return 'saved';
-        var_dump(); // lets see all the rata that are coming  
+        var_dump(request()->all()); // lets see all the rata that are coming with a var dump 
     }
 }
