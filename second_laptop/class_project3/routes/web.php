@@ -80,12 +80,40 @@ Route::get('/student/edit',function(){
 
 // you have to write under a prefix to set the root directory
 
-Route::prefix('/employees')->group(function(){
-    Route::get('/edit/{id?}',function($id){
-        return $id;
-    });
+#Route::prefix('/employees')->group(function(){
+#    Route::get('/edit/{id?}',function($id){
+#        return $id;
+#    });
 
-});
+#});
+
+
+### make a controller with php artisan
+
+#-> sudo php artisan make:controller Student
+#-> go to app folder controller
+#3 first it will search controller when you go to the route
+## and the index is a function which wil be executed when this
+## route goes
+
+Route::get('/student','StudentController@index');
+## print everything
+Route::get('/test','testController@index');
+## now taking the same post form with
+# a different function
+Route::post('/test','testController@posttest');
+
+// regiter method starts here
+########################################3
+
+Route::get('/registration','RegistrationController@index');
+Route::post('/registration','RegistrationController@save');
+
+
+
+
+
+
     
 
 
